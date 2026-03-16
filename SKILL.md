@@ -65,6 +65,7 @@ Move a task to `done` only with explicit user confirmation or verifiable evidenc
 
 ## References
 - `references/workflow.md` for the four operating modes and loading order
+- `references/new-project-template.md` for copy-ready new-project bootstrap commands and prompts
 - `references/quickstart.md` for the one-minute bootstrap flow in a new or messy project
 - `references/quickstart-zh.md` for a Chinese minimal operating guide with copy-ready commands and prompts
 - `references/cheatsheet-zh.md` for a one-screen Chinese cheat sheet optimized for repeat project resume flows

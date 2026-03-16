@@ -5,6 +5,7 @@ Use this flow when a project does not yet have `.codex/context/` state, when the
 
 Chinese quick reference:
 - `references/quickstart-zh.md` for a copy-ready operating guide focused on minimal prompt input across repeated sessions
+- `references/new-project-template.md` for a first-time project bootstrap template with copy-ready commands and prompts
 
 ## One-Minute Bootstrap
 1. Run the initializer from any project root:

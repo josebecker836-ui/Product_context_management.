@@ -558,8 +558,58 @@ def validate_py_compile() -> None:
 def validate_reference_consistency() -> None:
     references_dir = SCRIPTS_DIR.parent / "references"
     skill_path = SCRIPTS_DIR.parent / "SKILL.md"
+    readme_path = SCRIPTS_DIR.parent / "README.md"
+    readme_zh_path = SCRIPTS_DIR.parent / "README-zh.md"
+    new_project_template_path = references_dir / "new-project-template.md"
+
+    readme = readme_path.read_text(encoding="utf-8")
+    assert_contains(readme, "[README-zh.md](./README-zh.md)", "README docs section")
+    assert_contains(
+        readme,
+        "[references/new-project-template.md](./references/new-project-template.md)",
+        "README new project template link",
+    )
+
+    readme_zh = readme_zh_path.read_text(encoding="utf-8")
+    assert_contains(readme_zh, "双层存储", "README-zh architecture language")
+    assert_contains(readme_zh, "表面双主源，内部单结算点", "README-zh settlement language")
+    assert_contains(
+        readme_zh,
+        "active-context.md",
+        "README-zh token control ladder",
+    )
+    assert_contains(readme_zh, "quick_validate.py", "README-zh validation guidance")
+    assert_contains(
+        readme_zh,
+        "[references/new-project-template.md](./references/new-project-template.md)",
+        "README-zh new project template link",
+    )
+
+    new_project_template = new_project_template_path.read_text(encoding="utf-8")
+    for expected in (
+        "init_context_governor.py",
+        "docs/prd/approved-prd.md",
+        "settle_checklist_context_governor.py",
+        "resume_context_governor.py",
+        "sync_progress_context_governor.py",
+        "closeout_context_governor.py",
+        "quick_validate.py",
+    ):
+        assert_contains(new_project_template, expected, "new project template commands")
+
+    skill_text = skill_path.read_text(encoding="utf-8")
+    assert_contains(
+        skill_text,
+        "`references/new-project-template.md`",
+        "SKILL references new project template",
+    )
 
     quickstart = (references_dir / "quickstart.md").read_text(encoding="utf-8")
+    assert_contains(
+        quickstart,
+        "`references/new-project-template.md`",
+        "quickstart new project template link",
+    )
     assert_contains(
         quickstart,
         "`docs/implementation/progress.md` (optional bootstrap and milestone log; not a live resume source)",
@@ -573,6 +623,11 @@ def validate_reference_consistency() -> None:
     )
 
     quickstart_zh = (references_dir / "quickstart-zh.md").read_text(encoding="utf-8")
+    assert_contains(
+        quickstart_zh,
+        "`references/new-project-template.md`",
+        "quickstart-zh new project template link",
+    )
     quickstart_zh_validation = extract_markdown_section(quickstart_zh, "## 一条命令自检")
     assert_contains(
         quickstart_zh_validation,

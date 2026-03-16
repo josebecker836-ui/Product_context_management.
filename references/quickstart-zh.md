@@ -6,6 +6,9 @@
 如果你只想要一页能直接复制的超短版本，先看：
 - `references/cheatsheet-zh.md`
 
+如果你是在一个全新项目里第一次接入，先看：
+- `references/new-project-template.md`
+
 ## 核心原则
 - 人看 `docs/implementation/*`
 - 机器看 `.codex/context/*`

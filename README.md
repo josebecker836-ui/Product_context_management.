@@ -2,6 +2,9 @@
 
 Reusable Codex skill for long-running projects that need disciplined context loading, PRD-to-checklist planning, dependency tracking, progress sync, and low-token resume flows.
 
+Chinese overview:
+- [README-zh.md](./README-zh.md)
+
 ## What It Solves
 
 - Turn an approved PRD into an ordered implementation checklist with stable task IDs.
@@ -25,6 +28,7 @@ That keeps repeated input much smaller across long project lifecycles.
 ## Repository Layout
 
 - [SKILL.md](./SKILL.md): main skill contract
+- [README-zh.md](./README-zh.md): Chinese-first reuse and onboarding overview
 - [scripts](./scripts): deterministic helpers for init, settle, resume, sync, closeout, render, and validation
 - [references](./references): workflow, schema, sync rules, and quickstart docs
 - [assets](./assets): templates and expected outputs for validation
@@ -78,6 +82,9 @@ Then invoke the skill in Codex with prompts like:
 - `Use $context-governor to resume this project from .codex/context/active-context.md with the smallest necessary context.`
 - `Use $context-governor to sync progress from today's work and only mark tasks done where evidence exists.`
 
+For a copy-ready first-run template, start here:
+- [references/new-project-template.md](./references/new-project-template.md)
+
 ## Recommended Project Workflow
 
 1. Initialize the project-local context scaffolding.
@@ -100,6 +107,8 @@ python scripts\quick_validate.py
 
 ## Docs
 
+- [README-zh.md](./README-zh.md)
+- [new-project-template.md](./references/new-project-template.md)
 - [quickstart.md](./references/quickstart.md)
 - [quickstart-zh.md](./references/quickstart-zh.md)
 - [cheatsheet-zh.md](./references/cheatsheet-zh.md)
